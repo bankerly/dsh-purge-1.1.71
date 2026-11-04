@@ -18,10 +18,11 @@
 
 ## 与原版的差异
 
-只有两类，不含功能改动：
+不含任何功能改动：
 
 1. 新增本文件 `NOTICE.md` 与 `PUBLISH.md`；
-2. 在本文件与两份 README 顶部加了来源说明段落。
+2. 在本文件与两份 README 顶部加了来源说明段落；
+3. 移除了 `.github/workflows/release.yml`。该工作流的发布条件是 `if: github.repository == 'YuJunZhiXue/dsh-purge'`，在本存档仓库上永远不会触发；而且 GitHub 会拒绝用未带 `workflow` scope 的令牌推送包含工作流的提交，保留它会让仓库无法用只含 `repo` 权限的令牌更新。工作流原文仍可在上游仓库查到。
 
 代码、补丁表、`package.json`、`LICENSE`、`skills/`、`docs/` 与 tgz 内原件逐字节一致。
 
